@@ -11,7 +11,7 @@ export async function POST(req: Request, {params}: { params: {address: string} }
     const walletClient = createWalletClient({
         account,
         chain: baseSepolia,
-        transport: http()
+        transport: http(process.env.BASE_SEPOLIA_RPC_URL)
       })
 
     // await new Promise(resolve => setTimeout(resolve, 2500));
